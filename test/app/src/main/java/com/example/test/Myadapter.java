@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,14 @@ public class Myadapter extends RecyclerView.Adapter<Myadapter.Myholder> {
     @Override
     public void onBindViewHolder(@NonNull Myholder holder, int position) {
         holder.textView.setText(list.get(position));
+
+        holder.textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,Activity2.class);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
